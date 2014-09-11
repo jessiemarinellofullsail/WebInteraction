@@ -38,7 +38,6 @@
 window.onload = function() {
     var theCanvas = document.getElementById("Rectangle1");
     if (theCanvas) {
-        //Get Context
         var ctx = theCanvas.getContext("2d");
 
         if (ctx) {
@@ -47,11 +46,11 @@ window.onload = function() {
             ctx.fillStyle = "blue";
             ctx.lineWidth = 5;
 
-            ctx.strokeRect(10,0,50,100);
-            ctx.fillRect(10,0,50,100);
+            ctx.strokeRect(10, 0, 50, 100);
+            ctx.fillRect(10, 0, 50, 100);
         }
     }
-}
+
 
     /*******************************************
      PART 2
@@ -65,9 +64,24 @@ window.onload = function() {
      Use the arc method
      ********************************************/
 
-
 //Draw Circle here
+var theCanvas2 = document.getElementById("Circle1");
+    if (theCanvas2 && theCanvas2.getContext){
+        var ctx = theCanvas2.getContext("2d");
+        if(ctx){
+           ctx.strokeStyle = "black";
+           ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
+           ctx.lineWidth = 5;
 
+            var degrees = 360;
+            var radians = (degrees/180)*Math.PI;
+
+            ctx.beginPath();
+            ctx.arc(50, 50, 20, 0, radians);
+            ctx.fill();
+            ctx.stroke();
+        }
+    }
 
     /*******************************************
      PART 3
@@ -137,3 +151,4 @@ window.onload = function() {
 
 // Draw scene here
 
+}
