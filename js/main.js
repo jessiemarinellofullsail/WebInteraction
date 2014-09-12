@@ -32,8 +32,36 @@
  Reminder - set the style first then draw.
  ********************************************/
 
-//Draw Rectangle here
 window.onload = function() {
+
+    if(Modernizr.canvas){
+        //Canvas is supported
+
+        var theMod = document.getElementById("Canvas1");
+        var ctx = theMod.getContext("2d");
+
+        //Draw some text on our canvas
+        ctx.font = "25pt Georgia";
+        ctx.fillText("Canvas is supported!", 20, 60);
+
+
+    }else {
+        //Canvas is not supported
+        //Polyfill would go here
+    }
+
+    console.log(Modernizr);
+
+
+    if(Modernizr.draganddrop){
+        ctx.font = "25pt Georgia";
+        ctx.fillText("Drag and Drop Works!!", 20, 120);
+
+    }else{
+        //Ployfills would go
+
+    }
+    //Draw Rectangle here
     var theCanvas = document.getElementById("Rectangle1");
     if (theCanvas) {
         var ctx = theCanvas.getContext("2d");
@@ -242,4 +270,4 @@ var theCanvas3 = document.getElementById("Star1");
 
 // Draw scene here
 
-}
+}//closes onload function
