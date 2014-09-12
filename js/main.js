@@ -128,31 +128,26 @@ var theCanvas3 = document.getElementById("Star1");
     if (theCanvas4 && theCanvas4.getContext) {
         var ctx = theCanvas4.getContext("2d");
         if (ctx) {
+
+            ctx.strokeStyle= "blue";
+            ctx.lineWidth = 5;
+
+            //Stroke A Quater Arc
+            ctx.beginPath();
+            //arc(x,y, r, sA, eA, Clockwise or counter);
+            ctx.arc(200,232, 150, 1 * Math.PI , 2*Math.PI);
+            ctx.stroke();
+
             ctx.strokeStyle = "blue";
             ctx.lineWidth = 5;
 
-            //Stroke a simple bezier curve
             ctx.beginPath();
-            ctx.moveTo(50,200);
-
-            //bezierCurveTo(cx1, cy1, cx2, cy2, x, y )
-
-            ctx.bezierCurveTo(50,100, 200, 300, 200, 150);
-
+            ctx.moveTo(50,232);
+            ctx.bezierCurveTo(65, 293, 104, 298, 130, 235);
+            ctx.bezierCurveTo(129, 301, 209, 296, 202, 233);
+            ctx.bezierCurveTo(208, 286, 279, 316, 277, 232);
+            ctx.bezierCurveTo(286, 294, 348, 304, 351, 230);
             ctx.stroke();
-
-
-            //quadratic curve
-            ctx.beginPath();
-            ctx.moveTo(400,200);
-
-            //quadraticCurveTo(cx, cy, x, y)
-
-            ctx.quadraticCurveTo(500,100, 600, 150);
-            ctx.stroke();
-
-
-
         }
     }
 
