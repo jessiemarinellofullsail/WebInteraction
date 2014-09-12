@@ -132,7 +132,7 @@ var theCanvas3 = document.getElementById("Star1");
             ctx.strokeStyle= "blue";
             ctx.lineWidth = 5;
 
-            //Stroke A Quater Arc
+            //Stroke full Arc
             ctx.beginPath();
             //arc(x,y, r, sA, eA, Clockwise or counter);
             ctx.arc(200,232, 150, 1 * Math.PI , 2*Math.PI);
@@ -152,15 +152,32 @@ var theCanvas3 = document.getElementById("Star1");
     }
 
 
-            /*******************************************
+/*******************************************
  PART 5
-
  Practice using text.
- Draw text into your canvas.  It can said whatever you would like in any color.
-
+ Draw text into your canvas.  It can say whatever you would like in any color.
  ********************************************/
 
 //Draw text here
+    var theCanvas5 = document.getElementById('Text1');
+    if (theCanvas5 && theCanvas5.getContext) {
+        var ctx = theCanvas5.getContext("2d");
+        if (ctx) {
+
+            var theString = "I wish I understood part 4 better";
+
+            //Stroke and Fill Text
+            ctx.font="32pt Verdana";
+            ctx.fillStyle = "rgb(253,29,6)";
+            //ctx.textBaseline= "middle";
+            ctx.strokeStyle = "rgba(9,144,234, .8)";
+            ctx.fillText(theString, 20, 100);
+            ctx.strokeText(theString, 22, 100);
+
+
+
+        }
+    }
 
 /*******************************************
  PART 6
@@ -172,11 +189,45 @@ var theCanvas3 = document.getElementById("Star1");
  3. Slice a section of the logo out and draw that onto the canvas.
 
  Reminder to use the drawImage method for all 3 of the ways.
-
  ********************************************/
 
 //Draw images here
+    var theCanvas6 = document.getElementById('Image1');
+    if (theCanvas6 && theCanvas6.getContext) {
+        var ctx = theCanvas6.getContext("2d");
+        if (ctx) {
+            //Create a variable to hold image
+            var srcImg = document.getElementById("img1");
 
+            //original image
+            ctx.drawImage(srcImg, 0,0);
+
+        }
+    }
+
+    var theCanvas7 = document.getElementById('Image2');
+    if (theCanvas7 && theCanvas7.getContext) {
+        var ctx = theCanvas7.getContext("2d");
+        if (ctx) {
+
+            var srcImg = document.getElementById("img1");
+
+            //scaled
+            ctx.drawImage(srcImg, 50, 50, 1650, 544);
+        }
+    }
+
+    var theCanvas8 = document.getElementById('Image3');
+    if (theCanvas8 && theCanvas8.getContext) {
+        var ctx = theCanvas8.getContext("2d");
+        if (ctx) {
+
+            var srcImg = document.getElementById("img1");
+
+            //sliced right, down, width, height, destination x, dest y, enlarge
+            ctx.drawImage(srcImg, 645, 873, 200, 140, 50, 50, 190, 280);
+        }
+    }
 
 /*******************************************
  PART 7
